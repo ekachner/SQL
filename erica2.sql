@@ -1,7 +1,7 @@
 USE employees;
 
 -- Average employee salary for the year 2000 by gender
-SELECT gender, AVG(salary)
+SELECT gender, ROUND(AVG(salary), 2)
 	FROM employees AS e
     INNER JOIN salaries AS s
 		ON e.emp_no = s.emp_no
@@ -9,7 +9,7 @@ SELECT gender, AVG(salary)
 	GROUP BY gender;
     
 -- Average salary in 2000 by department
-SELECT d.dept_name, AVG(s.salary)
+SELECT d.dept_name, ROUND(AVG(s.salary), 2)
 	FROM departments AS d
     INNER JOIN dept_emp AS de
 		ON d.dept_no = de.dept_no
@@ -20,7 +20,7 @@ SELECT d.dept_name, AVG(s.salary)
     
     
 -- Average salary in 2000 by gender by department    
-SELECT d.dept_name, e.gender, AVG(s.salary)
+SELECT d.dept_name, e.gender, ROUND(AVG(s.salary), 2)
 	FROM dept_emp AS de
 	INNER JOIN salaries AS s
 		ON de.emp_no = s.emp_no
