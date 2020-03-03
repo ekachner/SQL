@@ -29,8 +29,7 @@ SELECT d.dept_name, e.gender, AVG(s.salary)
 	INNER JOIN employees AS e
 		ON de.emp_no = e.emp_no
 	WHERE YEAR(s.from_date) = 2000 AND YEAR(s.to_date) = 2000
-    GROUP BY d.dept_name
-    ORDER BY e.gender;
+    GROUP BY d.dept_name, e.gender;
    
         
         
