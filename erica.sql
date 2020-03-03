@@ -1,7 +1,7 @@
 USE employees;
 
 -- Average age of employees   
-SELECT YEAR(NOW()) - AVG(YEAR(birth_date))
+SELECT ROUND(YEAR(NOW()) - AVG(YEAR(birth_date)))
 	FROM employees;
 
 -- Ratio of men vs. women    
