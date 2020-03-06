@@ -24,7 +24,7 @@ SELECT CONCAT(e.first_name,' ', e.last_name) AS name, title, to_date AS "employe
 		ON e.emp_no = t.emp_no
 	WHERE last_name = "Aamodt"
     GROUP BY e.emp_no
-    ORDER BY first_name;
+    ORDER BY t.to_date DESC;
 
 
 
